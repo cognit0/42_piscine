@@ -1,11 +1,19 @@
-#include <stdio.h>
-#include <unistd.h>
-#include <string.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yerkiral <yerkiral@42kocaeli.com>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/30 02:39:38 by yerkiral          #+#    #+#             */
+/*   Updated: 2021/11/30 02:39:42 by yerkiral         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-unsigned int ft_strlcpy(char *dest, char *src, unsigned int size)
+unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 {
-	int len;
-	int i;
+	int	len;
+	int	i;
 
 	i = 0;
 	len = 0;
@@ -23,27 +31,4 @@ unsigned int ft_strlcpy(char *dest, char *src, unsigned int size)
 		dest[i] = '\0';
 	}
 	return (len);
-}
-
-int main()
-{
-//	char *s1;
-//	char s2[6];
-
-//	s1 = "hello";
-	
-//	strlcpy(s2, s1, 6);
-//	ft_strlcpy(s2, s1, 5);
-//	printf("%s", s2);
-	char	*string1;
-	char	string2[2];
-
-	string1 = "0";
-	printf("base   : %s\n", string1);
-	strlcpy(string2, string1, 1);
-	printf("cpy c  : %s\n", string2);
-	ft_strlcpy(string2, string1, 1);
-	printf("cpy ft : %s\n", string2);
-
-	return (0);
 }

@@ -1,8 +1,32 @@
-int	ft_str_is_lowercase(char *str)
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_str_is_uppercase.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yerkiral <yerkiral@42kocaeli.com>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/30 02:27:42 by yerkiral          #+#    #+#             */
+/*   Updated: 2021/11/30 02:27:59 by yerkiral         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+int	ft_str_true(int istrue, int i)
 {
-	int i;
-	int istrue;
-	char upper;
+	if (istrue == i || i == 0)
+	{
+		return (1);
+	}
+	else
+	{
+		return (0);
+	}
+}
+
+int	ft_str_is_uppercase(char *str)
+{
+	int		i;
+	int		istrue;
+	char	upper;
 
 	i = 0;
 	istrue = 0;
@@ -14,18 +38,11 @@ int	ft_str_is_lowercase(char *str)
 			if (str[i] == upper)
 			{
 				istrue++;
-				break;
+				break ;
 			}
 			upper++;
 		}
 		i++;
 	}
-	if (istrue == i || i == 0)
-	{
-		return (1);
-	}
-	else
-	{
-		return (0);
-	}
+	return (ft_str_true(istrue, i));
 }

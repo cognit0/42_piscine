@@ -1,9 +1,18 @@
-#include <stdio.h>
-#include <string.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yerkiral <yerkiral@42kocaeli.com>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/30 01:16:50 by yerkiral          #+#    #+#             */
+/*   Updated: 2021/11/30 01:17:07 by yerkiral         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 char	*ft_strcpy(char *dest, char *src)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (src[i] != '\0')
@@ -14,22 +23,3 @@ char	*ft_strcpy(char *dest, char *src)
 	dest[i] = '\0';
 	return (dest);
 }
-
-int main(void)
-{
-	int i = 0;
-	char src[] = "hello";
-	char dest[6];
-
-	ft_strcpy(dest, src);
-	strcpy(dest, src);
-
-	printf("src = %s \n", src); 
-	printf("dest = %s \n", dest);
-
-//	while (i < 5)
-//	{
-//		printf("%c", src[i]);
-//		i++;
-//	}
-}	

@@ -1,10 +1,20 @@
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strupcase.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yerkiral <yerkiral@42kocaeli.com>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/30 02:34:38 by yerkiral          #+#    #+#             */
+/*   Updated: 2021/11/30 02:34:40 by yerkiral         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 char	*ft_strupcase(char *str)
 {
-	int i;
-	char tmp;
-	char lower;
+	int		i;
+	char	tmp;
+	char	lower;
 
 	i = 0;
 	while (str[i] != '\0')
@@ -16,21 +26,11 @@ char	*ft_strupcase(char *str)
 			{
 				tmp = str[i];
 				str[i] = tmp - 32;
-				break;
+				break ;
 			}
 			lower++;
 		}
 		i++;
 	}
 	return (str);
-}
-
-int main()
-{
-	char s1[] = "hfsijdfH";
-
-
-	ft_strupcase(&s1[0]);
-	printf("%s", s1);
-	
 }

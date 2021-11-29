@@ -1,8 +1,18 @@
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yerkiral <yerkiral@42kocaeli.com>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/30 01:42:18 by yerkiral          #+#    #+#             */
+/*   Updated: 2021/11/30 01:42:39 by yerkiral         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-char 	*ft_strncpy(char *dest, char *src, unsigned int n)
+char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < n)
@@ -18,18 +28,4 @@ char 	*ft_strncpy(char *dest, char *src, unsigned int n)
 		i++;
 	}
 	return (dest);
-}
-
-int main(void)
-{
-
-	char *s1;
-	char *s2;
-
-	s1 = "hello";
-
-	ft_strncpy(s2, s1, 2);
-
-	printf("%s", s2);
-
 }
