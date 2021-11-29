@@ -9,14 +9,14 @@ int	ft_str_is_lowercase(char *str)
 	while (str[i] != '\0')
 	{
 		pb = 33;
-		while (lower < 127)
+		while (pb < 127)
 		{
-			if (str[i] == lower)
+			if (str[i] == pb)
 			{
 				istrue++;
 				break;
 			}
-			lower++;
+			pb++;
 		}
 		i++;
 	}

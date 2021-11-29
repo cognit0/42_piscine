@@ -44,7 +44,7 @@ int main()
 	char *str;
 
 
-	str = "asdFggz";
+	str = " asdFggz";
 	i = ft_str_is_alpha(str);
 	printf("%d", i);
 	return (0);
