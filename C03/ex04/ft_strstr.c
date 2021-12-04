@@ -1,39 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yerkiral <yerkiral@42kocaeli.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/02 02:07:56 by yerkiral          #+#    #+#             */
-/*   Updated: 2021/12/04 16:40:48 by yerkiral         ###   ########.fr       */
+/*   Created: 2021/12/02 02:16:51 by yerkiral          #+#    #+#             */
+/*   Updated: 2021/12/02 02:19:05 by yerkiral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-int	ft_get_length(char *str)
+char	*ft_strstr(char *str, char *to_find)
 {
-	int	i;
+	int		i;
+	char	*haystack;
+	char	*needle;
 
 	i = 0;
-	while (str[i] != '\0')
+	haystack = str;
+	needle = to_find;
+	if (*needle == '\0')
+		return (haystack);
+	while (*haystack != '\0')
 	{
-		i++;
+		if (*haystack == *needle)
+		{
+			return ((char *)(haystack));
+		}
+		haystack++;
 	}
-	return (i);
-}
-
-char	*ft_strcat(char *dest, char *src)
-{
-	int	i;
-	int	size;	
-
-	size = ft_get_length(dest);
-	i = 0;
-	while (src[i] != '\0')
-	{
-		dest[i + size] = (unsigned char)src[i];
-		i++;
-	}
-	dest[i + size] = '\0';
-	return (dest);
+	return (0);
 }

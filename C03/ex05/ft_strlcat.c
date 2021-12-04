@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yerkiral <yerkiral@42kocaeli.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/02 02:07:56 by yerkiral          #+#    #+#             */
-/*   Updated: 2021/12/04 16:40:48 by yerkiral         ###   ########.fr       */
+/*   Created: 2021/12/02 02:21:17 by yerkiral          #+#    #+#             */
+/*   Updated: 2021/12/04 18:51:18 by yerkiral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,18 +22,31 @@ int	ft_get_length(char *str)
 	return (i);
 }
 
-char	*ft_strcat(char *dest, char *src)
+unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {
-	int	i;
-	int	size;	
+	char	*dst;
+	char	*src_start;
+	unsigned int dst_len;
+	unsigned int remaing;
 
-	size = ft_get_length(dest);
-	i = 0;
-	while (src[i] != '\0')
+	dst = dest;
+	src_start = src;
+	remaing = size;
+	while (remaing-- != 0 && *dst != '\0')
+		dst++;
+	dst_len = dest - dst;
+	remaing = size - dst_len;
+	if (remaing == 0)
+		return (dst_length + ft_get_len(src));
+	while (*src != '\0')
 	{
-		dest[i + size] = (unsigned char)src[i];
-		i++;
+		if (remaing > 1)
+		{
+			*dst++ = *src;
+			remaing--;
+		}
+		src++;
 	}
-	dest[i + size] = '\0';
-	return (dest);
+	*dst = '\0';
+	return (dst_len + (src - src_start));
 }

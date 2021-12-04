@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yerkiral <yerkiral@42kocaeli.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/02 02:07:56 by yerkiral          #+#    #+#             */
-/*   Updated: 2021/12/04 16:40:48 by yerkiral         ###   ########.fr       */
+/*   Created: 2021/12/02 02:15:17 by yerkiral          #+#    #+#             */
+/*   Updated: 2021/12/04 16:46:29 by yerkiral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,16 +22,16 @@ int	ft_get_length(char *str)
 	return (i);
 }
 
-char	*ft_strcat(char *dest, char *src)
+char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
-	int	i;
-	int	size;	
+	unsigned int	i;
+	int				size;
 
 	size = ft_get_length(dest);
 	i = 0;
-	while (src[i] != '\0')
+	while (src[i] != '\0' && i < nb)
 	{
-		dest[i + size] = (unsigned char)src[i];
+		dest[i + size] = src[i];
 		i++;
 	}
 	dest[i + size] = '\0';

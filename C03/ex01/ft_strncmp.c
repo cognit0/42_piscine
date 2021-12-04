@@ -1,39 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yerkiral <yerkiral@42kocaeli.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/02 02:07:56 by yerkiral          #+#    #+#             */
-/*   Updated: 2021/12/04 16:40:48 by yerkiral         ###   ########.fr       */
+/*   Created: 2021/12/02 02:06:49 by yerkiral          #+#    #+#             */
+/*   Updated: 2021/12/02 02:06:52 by yerkiral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_get_length(char *str)
+int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	int	i;
+	unsigned int	i;
 
+	if (n == 0)
+		return (0);
 	i = 0;
-	while (str[i] != '\0')
+	while (s1[i] != '\0' && s2[i] != '\0' && (s1[i] == s2[i]) && (i < (n - 1)))
 	{
 		i++;
 	}
-	return (i);
-}
-
-char	*ft_strcat(char *dest, char *src)
-{
-	int	i;
-	int	size;	
-
-	size = ft_get_length(dest);
-	i = 0;
-	while (src[i] != '\0')
-	{
-		dest[i + size] = (unsigned char)src[i];
-		i++;
-	}
-	dest[i + size] = '\0';
-	return (dest);
+	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }
