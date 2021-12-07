@@ -6,7 +6,7 @@
 /*   By: yerkiral <yerkiral@42kocaeli.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 01:37:50 by yerkiral          #+#    #+#             */
-/*   Updated: 2021/12/07 01:38:13 by yerkiral         ###   ########.fr       */
+/*   Updated: 2021/12/07 19:58:57 by yerkiral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,16 @@ int	ft_sqrt(int nb)
 {
 	int	e;
 
-	e = 1;
+	e = 0;
 	if (nb < 0)
 		return (0);
-	if (nb <= 2)
+	if (nb <= 1)
 		return (nb);
 	while ((e * e) != nb)
+	{
+		if (e > 46341)
+			return (0);
 		e++;
+	}
 	return (e);
 }

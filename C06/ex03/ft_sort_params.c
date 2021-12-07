@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_sort_params.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yerkiral <yerkiral@42kocaeli.com>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/12/07 17:48:54 by yerkiral          #+#    #+#             */
+/*   Updated: 2021/12/07 17:48:55 by yerkiral         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 #include <stdbool.h>
 
@@ -9,11 +21,11 @@ void	ft_putstr(char *str)
 
 void	ft_swap(char **a, char **b)
 {
-	char *c;
+	char	*swap;
 
-	c = *a;
+	swap = *a;
 	*a = *b;
-	*b = c;
+	*b = swap;
 }
 
 int	ft_strcmp(char *s1, char *s2)
@@ -28,27 +40,37 @@ int	ft_strcmp(char *s1, char *s2)
 	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }
 
-int main(int argc, char **argv)
+void	ft_sort(char **av, int len, int ind)
 {
-	int i;
-	int ac;
-	int a;
+	int		index;
+	bool	swap;
 
-	ac = 1;
+	index = ind;
 	while (true)
 	{
-		i = 1;
-		while (i < 3)
+		index = ind;
+		swap = false;
+		while (index < len)
 		{
-			if (ft_strcmp(argv[i], argv[i + 1]) < 0)
+			if (ft_strcmp(av[index], av[index + 1]) > 0)
 			{
-				ft_swap(&argv[i], &argv[i + 1]); 
-				
+				ft_swap(&av[index], &av[index + 1]);
+				swap = true;
 			}
-			i++;
+			index++;
 		}
-		
-		ac++;
+		if (!swap)
+			break ;
+	}
+}
+
+int	main(int argc, char **argv)
+{
+	int	i;
+
+	if (argc > 2)
+	{
+		ft_sort(argv, argc - 1, 1);
 	}
 	i = 1;
 	while (i < argc)
@@ -57,5 +79,4 @@ int main(int argc, char **argv)
 		ft_putstr("\n");
 		i++;
 	}
-
 }
