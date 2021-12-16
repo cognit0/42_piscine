@@ -6,7 +6,7 @@
 /*   By: yerkiral <yerkiral@42kocaeli.com>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 01:39:47 by yerkiral          #+#    #+#             */
-/*   Updated: 2021/12/14 01:53:34 by yerkiral         ###   ########.fr       */
+/*   Updated: 2021/12/14 19:14:07 by yerkiral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <unistd.h>
 
-typedef	enum
+typedef enum s_bool
 {
 	false = 0,
 	true = 1
